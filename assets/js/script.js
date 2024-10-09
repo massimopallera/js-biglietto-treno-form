@@ -1,7 +1,7 @@
 
 const price_x_Km = 0.21
 const formEl = document.querySelector('form')
-
+const ticketsTable = document.getElementById('tickets')
 
 formEl.addEventListener('submit', function(e) {
     e.preventDefault()
@@ -16,8 +16,11 @@ formEl.addEventListener('submit', function(e) {
     }
 
     let discount = calcDiscount(price_x_Km, km, age)
-
     console.log(`Name: ${userName} \nKilometers: ${km}\nAge: ${age}\nPrice: ${discount}`);
+
+
+    
+
 })
 
 
