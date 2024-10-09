@@ -17,32 +17,13 @@
     </head>
 
     <body>
-        <!-- <div class=" mt-4 container bg-primary border-radius-5">
-            <div class="row">
-                <form action="" class="m-3" for="ticket">
-                    <div class="col d-flex justify-content-center gap-5">
-                        <input type="text" name="userName" id="userName" placeholder="Inserisci nome">
-                        <input type="number" name="km" id="km" placeholder="Inserisci km da percorrere">
-                        <select name="age" id="age">
-                            <option value="default">Maggiorenne</option>
-                            <option value="over">Over 65</option>
-                            <option value="less">Minorenne</option>
-                        </select>
-                    </div>
-                    <div class="col d-flex justify-content-center my-4">
-                        <input type="submit">
-                    </div>
-                
-                </form>
-            </div>
-        </div> -->
         <main class="my-5 container">
 
             <h2 class="text-center">PRENOTA BIGLIETTO</h2>
 
             <div class=" shadow bg-dark py-5 px-4 rounded-4">
                 <form class="row gy-5 gx-3 justify-content-center">
-                <div class="col-4">
+                <div class="col-12 col-sm-4">
                     <label class="visually-hidden"
                         for="autoSizingInput">Name</label>
                     <input
@@ -52,7 +33,7 @@
                         placeholder="Inserisci nome" />
                 </div>
 
-                <div class="col-4">
+                <div class="col-12 col-sm-4">
                     <label class="visually-hidden"
                         for="autoSizingInputGroup">Username</label>
                     <input
@@ -62,7 +43,7 @@
                         placeholder="Inserisci km da percorrere" />
                 </div>
 
-                <div class="col-4">
+                <div class="col-12 col-sm-4">
                     <select class="form-select" id="age">
                         <option value="less">Minorenne</option>
                         <option value="default" selected>Maggiorenne</option>
@@ -77,34 +58,35 @@
             </form>
             </div>
 
-            <h2 class="mt-5 text-center">I TUOI BIGLIETTI</h2>
-            <!-- biglietti -->
-             
-            <div class="table-responsive">
-                <table class="table table-primary">
-                    <thead>
-                        <tr>
-                            <th class="py-3" scope="col">Nome Passeggero</th>
-                            <th class="py-3" scope="col">Offerta</th>
-                            <th class="py-3" scope="col">Carrozza</th>
-                            <th class="py-3" scope="col">Codice CP</th>
-                            <th class="py-3" scope="col">Costo biglietto</th>
-                        </tr>
-                    </thead>
-                    <tbody id="tickets">
-                        <tr class="">
-                            <td scope="row" class="ticketName"></td>
-                            <td class="ticketType"></td>
-                            <td class="carrozza"></td>
-                            <td class="CP"></td>
-                            <td class="ticketPrice"></td>
-                        </tr>
+            <div id="ticket-container">
+
+                <h2 class="mt-5 text-center">I TUOI BIGLIETTI</h2>
+                <!-- biglietti -->
+                
+                <div class="table-responsive rounded">
+                    <table class="table table-primary">
+                        <thead>
+                            <tr>
+                                <th class="py-3" scope="col">Nome Passeggero</th>
+                                <th class="py-3" scope="col">Offerta</th>
+                                <th class="py-3" scope="col">Carrozza</th>
+                                <th class="py-3" scope="col">Codice CP</th>
+                                <th class="py-3" scope="col">Costo biglietto</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tickets">
+                            <!-- <tr class="">
+                                <td scope="row" class="ticketName">fdsfdsafsd</td>
+                                <td class="ticketType">dfasdf</td>
+                                <td class="carrozza">6</td>
+                                <td class="CP">43243</td>
+                            <td class="ticketPrice">0.21€</td>
+                        </tr> -->
                     </tbody>
                 </table>
             </div>
+        </div>
             
-
-
     </main>
         
 

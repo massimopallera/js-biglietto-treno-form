@@ -2,6 +2,9 @@
 const price_x_Km = 0.21
 const formEl = document.querySelector('form')
 const ticketsTable = document.getElementById('tickets')
+const container = document.getElementById('ticket-container')
+
+let i = 0 //to give an id for every ticket 
 
 formEl.addEventListener('submit', function(e) {
     e.preventDefault()
@@ -14,19 +17,52 @@ formEl.addEventListener('submit', function(e) {
         alert('Errore. Inserisci o correggi tutti i dati');
         return;
     }
-
-    let discount = calcDiscount(price_x_Km, km, age)
-    console.log(`Name: ${userName} \nKilometers: ${km}\nAge: ${age}\nPrice: ${discount}`);
-
-
     
+    i += 1
+    container.style.display = 'block'
+    let price = calcDiscount(price_x_Km, km, age)
+    console.log(`Name: ${userName} \nKilometers: ${km}\nAge: ${age}\nPrice: ${price}`);
 
+    const newTicket = `
+    <tr id="ticket_${i}">
+        <td scope="row" class="ticketName">${userName}</td>
+        <td class="ticketType text-right">${ticketType(age)}</td>
+        <td class="carrozza">${Math.floor((Math.random()*10) + 1)}</td>
+        <td class="CP">${Math.floor((Math.random()*10000) + 1)}</td>
+        <td class="ticketPrice">${price}€</td>
+   </tr>
+    `
+
+    ticketsTable.innerHTML += newTicket
 })
 
 
-//price is just the price for a km
-//x is the amout of km to do
-//age will not be a number
+/**
+ * 
+ * @param {String} value 
+ * @returns 
+ */
+function ticketType(value){
+
+    let str = 'Standard'
+
+    switch (value){
+        case 'over':
+            str = 'Over'
+        case 'less':
+            str = 'Less'
+        }
+
+    return `Offerta ${str}`
+}
+
+
+/**
+ * @param {Number} price - price per kilometer
+ * @param {Number} x     - kilometers
+ * @param {String} age   - not a number, its value should be over,less or default
+ * @returns 
+ */
 function calcDiscount(price, x, age){
     
     let total = price*x
