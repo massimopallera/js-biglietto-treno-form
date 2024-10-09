@@ -1,7 +1,7 @@
+
 const price_x_Km = 0.21
-
-
 const formEl = document.querySelector('form')
+
 
 formEl.addEventListener('submit', function(e) {
     e.preventDefault()
@@ -9,20 +9,22 @@ formEl.addEventListener('submit', function(e) {
     const userName = e.target.userName.value;
     const km = e.target.km.value;
     const age = e.target.age.value;
-    console.log(userName);
-    console.log(km);
-    console.log(age);
     
-    console.log(discount(price_x_Km, km, age))
+    if(km<=0 || !km || !userName){
+        alert('Errore. Inserisci o correggi tutti i dati');
+        return;
+    }
+
+    let discount = calcDiscount(price_x_Km, km, age)
+
+    console.log(`Name: ${userName} \nKilometers: ${km}\nAge: ${age}\nPrice: ${discount}`);
 })
 
 
 //price is just the price for a km
 //x is the amout of km to do
 //age will not be a number
-
-
-function discount(price, x, age){
+function calcDiscount(price, x, age){
     
     let total = price*x
     // let actual_price = total
